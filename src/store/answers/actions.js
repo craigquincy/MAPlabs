@@ -15,6 +15,9 @@ const USER_ID = 1
  * See {@link persistQuestionAC|persistQuestionAC} for persistance, like dispatching an API call to the database.
  * @param {integer} question_code - Unique ID corresponding to question these answers relate to
  * @param {Array<string>} answers - One or more strings meant to answer the related question
+ * @return {Object}
+ * @property {integer} question_code
+ * @property {Array<string>} answers 
  */
 export const updateAnswersAC = (question_code, answers) => {
   return {
