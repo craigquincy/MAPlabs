@@ -10,16 +10,12 @@ const URL = "http://localhost:3001"
 // const URL = process.env.DB_URL
 const USER_ID = 1
 
-/* *****************************************************
-   updateAnswersAC()
-
-   Update answers for a question in state.
-   Will replace any other answers for the question.
-   Call persistQuestionAC() to save to database.
-
-   quesion_code - integer
-   answers - array of answer strings
-******************************************************** */
+/**
+ * updateAnswersAC - Override current value of answers to a question in state. 
+ * See {@link persistQuestionAC|persistQuestionAC} for persistance, like dispatching an API call to the database.
+ * @param {integer} question_code - Unique ID corresponding to question these answers relate to
+ * @param {Array<string>} answers - One or more strings meant to answer the related question
+ */
 export const updateAnswersAC = (question_code, answers) => {
   return {
     type: ANSWERS_UPDATE,
