@@ -1,4 +1,6 @@
-
+/**
+ * @module
+ */
 export const ANSWERS_LOADING  = "ANSWERS_LOADING"
 export const ANSWERS_LOAD     = "ANSWERS_LOAD"
 export const ANSWERS_ERROR_DB = "ANSWERS_ERROR_DB"
