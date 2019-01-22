@@ -42,20 +42,20 @@ const initialState = {
 }
 
 /**
- *   getAnswers - Get array of zero or more strings representing answers to one question for a given question_code
+ *   @function getAnswers - Get array of zero or more strings representing answers to one question for a given question_code
  *   @param {store.state.answersRD} state - local slice of global state, @see {@link module:src/store/answers/reducer~store.state.answersRD|Type Definition}
  *   @param {integer} question_code - Expected to be unique ID corresponding to a question
- *   @return {Array<string|undefined>} - Zero or more strings meant to answer the related question 
+ *   @return {Array<string|undefined>} - Zero or more strings meant to answer the related question
  */
 export const getAnswers = (state, question_code) =>
   state.questions[question_code] || []
 
 /**
- *   answersRD
+ *   @function answersRD
  *   @param {store.state.answersRD} state - local slice of global state, @see {@link module:src/store/answers/reducer~store.state.answersRD|Type Definition}
  *   @param {Object} action
  *   @property {string} type - Expected to match one of the {@link module:src/store/answers/consants|Constants}
- *   @property {*} [payload] 
+ *   @property {*} [payload]
  *   @return {store.state.answersRD}
  */
 export const answersRD = (state = initialState, action) => {
@@ -69,7 +69,7 @@ export const answersRD = (state = initialState, action) => {
     case ANSWERS_LOADING:
       console.log("answersRD::LOADING");
       return initialState;
-    
+
       /**
      * @param {Object} ANSWERS_LOAD_ACTION
      * @property {Object.<integer, Array<string>>} payload
