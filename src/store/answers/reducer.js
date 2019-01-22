@@ -1,6 +1,6 @@
 /**
  * @module src/store/answers/reducer
- * @see {@link module:src/store/answers/consants|Constants}
+ * @see {@link module:src/store/answers/consants|constants}
  */
 import {
   ANSWERS_LOADING,
@@ -29,6 +29,11 @@ import {
  *     }
  */
 
+/**
+ *   @constant
+ *   @type {store.state.answersRD}
+ *   @default
+ */
 const initialState = {
   isLoading: true,
   isError: false,
@@ -45,9 +50,13 @@ const initialState = {
 export const getAnswers = (state, question_code) =>
   state.questions[question_code] || []
 
- /* ***********************************************
-    answersRD
- ************************************************** */
+/**
+ *   @function answersRD
+ *   @param {store.state.answersRD} state - local slice of global state, @see {@link module:src/store/answers/reducer~store.state.answersRD|Type Definition}
+ *   @param {Object} action
+ *   @property {string} type - Expected to match one of the {@link module:src/store/answers/consants|Constants}
+ *   @property {Object} payload - //TODO
+ */
 export const answersRD = (state = initialState, action) => {
 
   const { type, payload } = action
