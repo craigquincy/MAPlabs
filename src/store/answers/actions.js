@@ -19,8 +19,8 @@ const URL = process.env.REACT_APP_DB_URL || "http://localhost:3001"
 const USER_ID = 1
 
 /**
- * @function updateAnswersAC - Create action meant to override current value of answers to a question in state.
- * See {@link persistQuestionAC|persistQuestionAC} for persistance, like dispatching an API call to the database.
+ * updateAnswersAC - Create action meant to override current value of answers to a question in state.
+ * @see {@link persistQuestionAC|persistQuestionAC} for persistance, like dispatching an API call to the database.
  * @param {integer} question_code - Unique ID corresponding to question these answers relate to
  * @param {Array<string>} answers - One or more strings meant to answer the related question
  * @return {Object}
@@ -36,8 +36,8 @@ export const updateAnswersAC = (question_code, answers) => {
   }
 }
 /**
+ * loadAllAnswersAC - Create action meant to fetch user's answers for all questions from API.
  * @async
- * @function loadAllAnswersAC - Create action meant to fetch user's answers for all questions from API.
  * @see {@link NavBar|Navbar} componentDidMount for sample implementation
  * @param {integer} userId
  * @return {Object}
@@ -68,8 +68,8 @@ export const loadAllAnswersAC = (userId) => {
 }
 
 /**
+ * persistAnswersAC - Create action meant to save user's answers for one question to the API.
  * @async
- * @function persistAnswersAC - Create action meant to save user's answers for one question to the API.
  * @param {integer} userId
  * @param {integer} question_code - Unique ID corresponding to question these answers relate to
  * @param {Array<string>} answers - One or more strings meant to answer the related question
