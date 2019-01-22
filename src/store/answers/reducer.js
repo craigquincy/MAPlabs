@@ -106,7 +106,8 @@ export const answersRD = (state = initialState, action) => {
       };
 
     /**
-     * @param {Object} ANSWERS_ERROR_DB_ACTION - likely an error in a fetch request
+     * @param {Object} ANSWERS_ERROR_DB_ACTION
+     * @description likely an error in a fetch request
      * @property {string} [payload='no error message provided']
      */
     case ANSWERS_ERROR_DB:

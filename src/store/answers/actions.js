@@ -21,7 +21,7 @@ const USER_ID = 1
 /**
  * @function updateAnswersAC
  * @description Create action meant to override current value of answers to a question in state.
- * @see {@link module:answers/actions~persistQuestionAC|persistQuestionAC} for persistance, like dispatching an API call to the database.
+ * @see {@link module:answers/actions~persistAnswersAC|persistAnswersAC} for persistance, like dispatching an API call to the database.
  * @param {integer} question_code - Unique ID corresponding to question these answers relate to
  * @param {Array<string>} answers - One or more strings meant to answer the related question
  * @return {Object}
