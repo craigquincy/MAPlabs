@@ -36,25 +36,18 @@ const initialState = {
 }
 
 /**
- *   @property {Array} questions.1
-/*
-/* ***********************************************
-   getAnswers()
-
-   Get array of answers strings for a given question_code
-
-   state -- answersRD (this reducer, not the entire store)
-   question_code -- integer
-
-   return array of answer strings or empty array
-************************************************** */
+ *   @function getAnswers - Get array of zero or more strings representing answers to one question for a given question_code
+ *   @param {store.state.answersRD} - state, Object representing {@link module:src/store/answers/reducer~store.state.answersRD|Type Definition}
+ *   @param {integer} question_code - Expected to be unique ID corresponding to a question
+ *   @return {Array<string|undefined>} - Zero or more strings meant to answer the related question 
+ */
 export const getAnswers = (state, question_code) =>
   state.questions[question_code] || []
 
  /* ***********************************************
     answersRD
  ************************************************** */
- export const answersRD = (state = initialState, action) => {
+export const answersRD = (state = initialState, action) => {
 
   const { type, payload } = action
 
