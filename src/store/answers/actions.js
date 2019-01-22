@@ -1,5 +1,5 @@
 /**
- * @module src/store/answers/reducer
+ * @module src/store/answers/actions
  * @see {@link module:src/store/answers/consants|constants}
  */
 import {
