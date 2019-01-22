@@ -10,8 +10,12 @@ import {
   ANSWERS_NO_OP,
 } from './constants'
 
-const URL = "http://localhost:3001"
-// const URL = process.env.DB_URL
+/**
+ * @constant
+ * @type {string}
+ * @default
+ */
+const URL = process.env.DB_URL || "http://localhost:3001"
 const USER_ID = 1
 
 /** 
