@@ -55,7 +55,8 @@ export const getAnswers = (state, question_code) =>
  *   @param {store.state.answersRD} state - local slice of global state, @see {@link module:src/store/answers/reducer~store.state.answersRD|Type Definition}
  *   @param {Object} action
  *   @property {string} type - Expected to match one of the {@link module:src/store/answers/consants|Constants}
- *   @property {Object} payload - //TODO
+ *   @property {*} [payload] 
+ *   @return {store.state.answersRD}
  */
 export const answersRD = (state = initialState, action) => {
 
