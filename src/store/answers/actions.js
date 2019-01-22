@@ -15,19 +15,19 @@ import {
  * @type {string}
  * @default
  */
-const URL = process.env.DB_URL || "http://localhost:3001"
+const URL = process.env.REACT_APP_DB_URL || "http://localhost:3001"
 const USER_ID = 1
 
-/** 
- * @function updateAnswersAC - Create action meant to override current value of answers to a question in state. 
+/**
+ * @function updateAnswersAC - Create action meant to override current value of answers to a question in state.
  * See {@link persistQuestionAC|persistQuestionAC} for persistance, like dispatching an API call to the database.
  * @param {integer} question_code - Unique ID corresponding to question these answers relate to
  * @param {Array<string>} answers - One or more strings meant to answer the related question
  * @return {Object}
  * @property {string} type - ANSWERS_UPDATE
- * @property {Object} payload 
+ * @property {Object} payload
  * @property {integer} payload.question_code
- * @property {Array<string>} payload.answers 
+ * @property {Array<string>} payload.answers
  */
 export const updateAnswersAC = (question_code, answers) => {
   return {
@@ -36,16 +36,16 @@ export const updateAnswersAC = (question_code, answers) => {
   }
 }
 /**
- * @async 
+ * @async
  * @function loadAllAnswersAC - Create action meant to fetch user's answers for all questions from API.
  * @see {@link NavBar|Navbar} componentDidMount for sample implementation
- * @param {integer} userId 
+ * @param {integer} userId
  * @return {Object}
  * @property {string} type - ANSWERS_LOAD on success
  * @property {string} type - ANSWERS_ERROR_DB on error
- * @property {Object} payload 
+ * @property {Object} payload
  * @property {Array<string>} payload.answers on success
- * @property {Array<string>} payload.error on error  
+ * @property {Array<string>} payload.error on error
  */
 export const loadAllAnswersAC = (userId) => {
   console.log("loadAllAnswersAC()")
@@ -68,16 +68,16 @@ export const loadAllAnswersAC = (userId) => {
 }
 
 /**
- * @async 
+ * @async
  * @function persistAnswersAC - Create action meant to save user's answers for one question to the API.
  * @param {integer} userId
  * @param {integer} question_code - Unique ID corresponding to question these answers relate to
- * @param {Array<string>} answers - One or more strings meant to answer the related question 
- * @example 
- * <caption>Warning: The following fails because getAnswers is called before the updateAnswersAC operation updates the store. 
+ * @param {Array<string>} answers - One or more strings meant to answer the related question
+ * @example
+ * <caption>Warning: The following fails because getAnswers is called before the updateAnswersAC operation updates the store.
  * You need to pass "answers" directly to persistQuestionAC.</caption>
  * this.props.dispatch(updateAnswersAC(question_code, answers))
- // BROKEN: this.props.dispatch(persistAnswersAC(question_code, getAnswers(this.props.answersRD, question_code)))  
+ // BROKEN: this.props.dispatch(persistAnswersAC(question_code, getAnswers(this.props.answersRD, question_code)))
  */
 export const persistAnswersAC = (userId, question_code, answers) => {
   console.log(`persistAnswersAC(${question_code})`)

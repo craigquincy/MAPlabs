@@ -6,87 +6,95 @@ import {
   FormControl,
   FormGroup,
 } from 'react-bootstrap';
+import ShortAnswer from './ShortAnswer'
 
 /* **************************************************
    ShortAnswers component
 
    Displays a single question with:
      -- Add button to add a new space for a short answer
-     -- Input field for each short answer
-     -- Trashcan next to each Input field
+     -- <ShortAnswer> for each answer
      -- Save button
+
+   state:
+     Manages the list of answers in state to provide better UX when adding
+       new blank entries (it allows us to be in control of the focus).
 
    props:
      question -- { code: 50, text: "Question 50" }
-     previousAnswers -- array of strings of previous answers
-     onSaveCB(newAnswer) -- callback for when user clicks Save
+     previousAnswers -- [] or array of strings of previous answers
+     onUpdateStoreCB(newAnswers) -- callback to update the store
+     onPersistCB(newAnswers) -- callback for when user clicks Save, updates store and persists
+     doesHandlePesistence -- { value: true }
 ***************************************************** */
 export default class ShortAnswers extends React.Component {
 
   state = {
     isDirty: false,
-
-    // controlled component
     answers: this.props.previousAnswers,
   }
 
-  // set isDirty and control answer field
-  onChange = (e) => {
-    // console.log("ShortAnswers::onChange(), e: ", e.target.value);
-    this.setState({
-      isDirty: true,
-      answers: [e.target.value],
-    })
+  // tell parent to save the array of answers to store
+  saveAnswer = (idx, newAnswer) => {
+    console.log(`ShortAnswers::saveAnswer(${idx}, ${newAnswer})`);
+
+    const { onUpdateStoreCB } = this.props
+    const { answers } = this.state
+
+    const newAnswers = [...answers]
+    newAnswers[idx] = newAnswer
+    onUpdateStoreCB(newAnswers)
+    this.setState({answers: newAnswers})
   }
 
-  // set isDirty and control answer field
-  onBlur = (e) => {
-    console.log("ShortAnswers::onBlur(), e: ", e.target.value);
-    // this.setState({
-    //   isDirty: true,
-    //   answers: [e.target.value],
-    // })
+  // delete answer from state::answers
+  deleteAnswer = (idxToDelete) => {
+    console.log(`ShortAnswers::deleteAnswer(${idxToDelete})`);
+    const { answers } = this.state
+
+    // this.setState({ answers: answers.filter((answer, idx) => idx !== idxToDelete) })
+    const newAnswers = answers.filter((answer, idx) => idx !== idxToDelete)
+    console.log("newAnswers: ", newAnswers);
+    this.setState({ answers: newAnswers })
   }
 
-  // Send newAnswers array back to Container to persist
-  //   and update Save button to indicate control is no longer dirty
-  onSubmit = (e) => {
-    console.log(`ShortAnswers::onclickSave(): ${this.state.answers}`);
-    console.log("ShortAnswers::state: ", this.state);
-    e.preventDefault()
-    // const value = e.target.answer.value.trim()
-    // console.log("value: ", value)
-    this.setState({ isDirty: false })
-    this.props.onSaveCB(this.props.question.code, this.state.answers)
+  // add an empty answer to state::answers
+  onclickAdd = () => {
+    console.log(`ShortAnswers::onclickAdd()`);
+    const { answers } = this.state
+
+    const newAnswers = answers.concat('')
+    console.log("newAnswers: ", newAnswers);
+    this.setState({ answers: newAnswers })
+  }
+
+  // tell parent to persist the answers
+  onclickSave = () => {
+    console.log(`ShortAnswers::onclickSave()`);
+    const { answers } = this.state
+    const { onPersistCB } = this.props
+
+    onPersistCB(answers)
   }
 
   // render!
   render() {
-    // console.log("Narrative::render()")
+    console.log("ShortAnswers::render()")
 
-    // initialize
-    const { question, onSaveCB } = this.props
-    const { isDirty, answers } = this.state
-    const answer = answers[0] || ''
+    const { question, doesHandlePersistence } = this.props
+    const { answers } = this.state
 
     return (
-      <Form
-        onSubmit={this.onSubmit}
-      >
-        <FormGroup>
-          <ControlLabel>&nbsp;&nbsp;{question.text}</ControlLabel>
-          <FormControl
-            componentClass = "textarea"
-            onChange = {this.onChange}
-            onBlur = {this.onBlur}
-            value = {answer}
-            placeholder = "Please enter an answer and click < Save >"
-          />
-        </FormGroup>
-        <Button type = "submit">{((isDirty) ? "Save" : "----")}</Button>
-      </Form>
+      <>
+        <h3>{question.text}</h3>
+        {answers.map((answer, idx) =>
+          <ShortAnswer key={idx} id={idx} previousAnswer={answer} saveAnswerCB={this.saveAnswer} deleteAnswerCB={this.deleteAnswer}></ShortAnswer>
+        )}
+        <Button type="button" onClick={this.onclickAdd}>Add answer</Button>
+        {doesHandlePersistence.value && (
+          <Button type="button" onClick={this.onclickSave}>Save</Button>
+        )}
+      </>
     )
   }
 }
-
-// export default ShortAnswers  // only neccessary for functional version
