@@ -71,7 +71,7 @@ export const answersRD = (state = initialState, action) => {
       return initialState;
     
       /**
-     * @typedef {Action} ANSWERS_LOAD_ACTION
+     * @typedef {Object} ANSWERS_LOAD_ACTION
      * @property {Object.<integer, Array<string>>} payload
      * @example
      * {
@@ -88,7 +88,7 @@ export const answersRD = (state = initialState, action) => {
       };
 
     /**
-     * @typedef {Action} ANSWERS_UPDATE_ACTION
+     * @typedef {Object} ANSWERS_UPDATE_ACTION
      * @property {Object} payload
      * @property {integer} payload.question_code
      * @property {Array<string>} payload.answers
@@ -105,7 +105,7 @@ export const answersRD = (state = initialState, action) => {
       };
 
     /**
-     * @typedef {Action} ANSWERS_ERROR_DB_ACTION - likely an error in a fetch request
+     * @typedef {Object} ANSWERS_ERROR_DB_ACTION - likely an error in a fetch request
      * @property {string} [payload='no error message provided']
      */
     case ANSWERS_ERROR_DB:
