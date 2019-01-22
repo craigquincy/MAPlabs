@@ -69,12 +69,16 @@ export const answersRD = (state = initialState, action) => {
     case ANSWERS_LOADING:
       console.log("answersRD::LOADING");
       return initialState;
-
-    // Payload:
-    //  {
-    //    1: [ 'answer one', 'answer two' ],
-    //    2: [ 'this is a narrative, so only one answer' ],
-    //  }
+    
+      /**
+     * @typedef {Action} ANSWERS_LOAD_ACTION
+     * @property {Object.<integer, Array<string>>} payload
+     * @example
+     * {
+     *    1: [ 'answer one', 'answer two' ],
+     *    2: [ 'this is a narrative, so only one answer' ],
+     *  }
+     */
     case ANSWERS_LOAD:
       console.log("answersRD::LOAD");
       return {
@@ -83,7 +87,14 @@ export const answersRD = (state = initialState, action) => {
         questions: payload,
       };
 
-    // Payload: { question_code: 6, answers: ["one", "two"] }
+    /**
+     * @typedef {Action} ANSWERS_UPDATE_ACTION
+     * @property {Object} payload
+     * @property {integer} payload.question_code
+     * @property {Array<string>} payload.answers
+     * @example
+     * { question_code: 6, answers: ["one", "two"] }
+     */
     case ANSWERS_UPDATE:
       console.log("answersRD::UPDATE");
       const newQuestions = { ...state.questions };
@@ -93,7 +104,10 @@ export const answersRD = (state = initialState, action) => {
         questions: newQuestions,
       };
 
-    // Fetch error
+    /**
+     * @typedef {Action} ANSWERS_ERROR_DB_ACTION - likely an error in a fetch request
+     * @property {string} [payload='no error message provided']
+     */
     case ANSWERS_ERROR_DB:
       console.log("answersRD::ERROR_DB");
       return {
