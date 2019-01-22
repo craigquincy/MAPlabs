@@ -1,3 +1,6 @@
+/**
+ * @module src/store/answers/reducer
+ */
 import {
   ANSWERS_LOADING,
   ANSWERS_LOAD,
@@ -6,16 +9,23 @@ import {
   ANSWERS_NO_OP,
  } from './constants';
 
-/*
-  answersRD: {
-    isLoading: true,
-    isError: false,
-    errorMessage: '',
-    questions: {
-      1: [ 'answer one', 'answer two' ],
-      2: [ 'this is a narrative, so only one answer' ],
-    },
-  }
+/**
+*   @typedef {Object} store.state.answersRD
+*   @property {boolean} isLoading=true
+*   @property {boolean} isError=false
+*   @property {string} errorMessage=''
+*   @property {Object.<integer, Array<string>>} questions={} - Variable number of answer arrays keyed by integer (expected to be question ID)
+*   @example
+*    //One possible instance of store.state.answersRD
+*    answersRD: {
+*    isLoading: true,
+*    isError: false,
+*    errorMessage: '',
+*    questions: {
+*      1: [ 'answer one', 'answer two' ],
+*      2: [ 'this is a narrative, so only one answer' ],
+*       },
+*     }
 */
 
 const initialState = {
