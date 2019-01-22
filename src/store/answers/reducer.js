@@ -1,5 +1,6 @@
 /**
  * @module src/store/answers/reducer
+ * @see {@link module:src/store/answers/consants|Constants}
  */
 import {
   ANSWERS_LOADING,
@@ -37,7 +38,7 @@ const initialState = {
 
 /**
  *   @function getAnswers - Get array of zero or more strings representing answers to one question for a given question_code
- *   @param {store.state.answersRD} - state, Object representing {@link module:src/store/answers/reducer~store.state.answersRD|Type Definition}
+ *   @param {store.state.answersRD} state - local slice of global state, @see {@link module:src/store/answers/reducer~store.state.answersRD|Type Definition}
  *   @param {integer} question_code - Expected to be unique ID corresponding to a question
  *   @return {Array<string|undefined>} - Zero or more strings meant to answer the related question 
  */
