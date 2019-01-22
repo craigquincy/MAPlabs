@@ -42,7 +42,7 @@ const initialState = {
 }
 
 /**
- *   @function getAnswers - Get array of zero or more strings representing answers to one question for a given question_code
+ *   getAnswers - Get array of zero or more strings representing answers to one question for a given question_code
  *   @param {store.state.answersRD} state - local slice of global state, @see {@link module:src/store/answers/reducer~store.state.answersRD|Type Definition}
  *   @param {integer} question_code - Expected to be unique ID corresponding to a question
  *   @return {Array<string|undefined>} - Zero or more strings meant to answer the related question 
@@ -51,7 +51,7 @@ export const getAnswers = (state, question_code) =>
   state.questions[question_code] || []
 
 /**
- *   @function answersRD
+ *   answersRD
  *   @param {store.state.answersRD} state - local slice of global state, @see {@link module:src/store/answers/reducer~store.state.answersRD|Type Definition}
  *   @param {Object} action
  *   @property {string} type - Expected to match one of the {@link module:src/store/answers/consants|Constants}
@@ -71,7 +71,7 @@ export const answersRD = (state = initialState, action) => {
       return initialState;
     
       /**
-     * @typedef {Object} ANSWERS_LOAD_ACTION
+     * @param {Object} ANSWERS_LOAD_ACTION
      * @property {Object.<integer, Array<string>>} payload
      * @example
      * {
@@ -88,7 +88,7 @@ export const answersRD = (state = initialState, action) => {
       };
 
     /**
-     * @typedef {Object} ANSWERS_UPDATE_ACTION
+     * @param {Object} ANSWERS_UPDATE_ACTION
      * @property {Object} payload
      * @property {integer} payload.question_code
      * @property {Array<string>} payload.answers
@@ -105,7 +105,7 @@ export const answersRD = (state = initialState, action) => {
       };
 
     /**
-     * @typedef {Object} ANSWERS_ERROR_DB_ACTION - likely an error in a fetch request
+     * @param {Object} ANSWERS_ERROR_DB_ACTION - likely an error in a fetch request
      * @property {string} [payload='no error message provided']
      */
     case ANSWERS_ERROR_DB:
