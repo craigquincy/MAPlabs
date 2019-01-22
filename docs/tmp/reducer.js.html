@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: reducer.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: reducer.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module src/store/answers/reducer
+ * @see {@link module:src/store/answers/consants|constants}
+ */
+import {
+  ANSWERS_LOADING,
+  ANSWERS_LOAD,
+  ANSWERS_UPDATE,
+  ANSWERS_ERROR_DB,
+  ANSWERS_NO_OP,
+ } from './constants';
+
+/**
+ *   @typedef {Object} store.state.answersRD
+ *   @property {boolean} isLoading=true
+ *   @property {boolean} isError=false
+ *   @property {string} errorMessage=''
+ *   @property {Object.&lt;integer, Array&lt;string>>} questions={} - Variable number of answer arrays keyed by integer (expected to be question ID)
+ *   @example
+ *    //One possible instance of store.state.answersRD
+ *    answersRD: {
+ *    isLoading: true,
+ *    isError: false,
+ *    errorMessage: '',
+ *    questions: {
+ *      1: [ 'answer one', 'answer two' ],
+ *      2: [ 'this is a narrative, so only one answer' ],
+ *       },
+ *     }
+ */
+
+/**
+ *   @constant
+ *   @type {store.state.answersRD}
+ *   @default
+ */
+const initialState = {
+  isLoading: true,
+  isError: false,
+  errorMessage: '',
+  questions: {},
+}
+
+/**
+ *   @function getAnswers - Get array of zero or more strings representing answers to one question for a given question_code
+ *   @param {store.state.answersRD} state - local slice of global state, @see {@link module:src/store/answers/reducer~store.state.answersRD|Type Definition}
+ *   @param {integer} question_code - Expected to be unique ID corresponding to a question
+ *   @return {Array&lt;string|undefined>} - Zero or more strings meant to answer the related question 
+ */
+export const getAnswers = (state, question_code) =>
+  state.questions[question_code] || []
+
+/**
+ *   @function answersRD
+ *   @param {store.state.answersRD} state - local slice of global state, @see {@link module:src/store/answers/reducer~store.state.answersRD|Type Definition}
+ *   @param {Object} action
+ *   @property {string} type - Expected to match one of the {@link module:src/store/answers/consants|Constants}
+ *   @property {*} [payload] 
+ *   @return {store.state.answersRD}
+ */
+export const answersRD = (state = initialState, action) => {
+
+  const { type, payload } = action
+
+  switch(type) {
+
+    // Reset the reducer to initial state, could be
+    //   used when switching users.
+    case ANSWERS_LOADING:
+      console.log("answersRD::LOADING");
+      return initialState;
+    
+      /**
+     * @typedef {Object} ANSWERS_LOAD_ACTION
+     * @property {Object.&lt;integer, Array&lt;string>>} payload
+     * @example
+     * {
+     *    1: [ 'answer one', 'answer two' ],
+     *    2: [ 'this is a narrative, so only one answer' ],
+     *  }
+     */
+    case ANSWERS_LOAD:
+      console.log("answersRD::LOAD");
+      return {
+        ...state,
+        isLoading: false,
+        questions: payload,
+      };
+
+    /**
+     * @typedef {Object} ANSWERS_UPDATE_ACTION
+     * @property {Object} payload
+     * @property {integer} payload.question_code
+     * @property {Array&lt;string>} payload.answers
+     * @example
+     * { question_code: 6, answers: ["one", "two"] }
+     */
+    case ANSWERS_UPDATE:
+      console.log("answersRD::UPDATE");
+      const newQuestions = { ...state.questions };
+      newQuestions[payload.question_code] = payload.answers
+      return {
+        ...state,
+        questions: newQuestions,
+      };
+
+    /**
+     * @typedef {Object} ANSWERS_ERROR_DB_ACTION - likely an error in a fetch request
+     * @property {string} [payload='no error message provided']
+     */
+    case ANSWERS_ERROR_DB:
+      console.log("answersRD::ERROR_DB");
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        errorMessage: payload || "no error message provided",
+      }
+
+      // no operation, AC didn't change stat
+      case ANSWERS_NO_OP:
+        console.log("answersRD::NO_OP")
+        return state
+
+    default:
+      return state
+   }
+ }
+
+ export default answersRD
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-constants.html">constants</a></li><li><a href="module-src_store_answers_actions.html">src/store/answers/actions</a></li><li><a href="module-src_store_answers_reducer.html">src/store/answers/reducer</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Jan 21 2019 20:12:59 GMT-0700 (GMT-07:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
