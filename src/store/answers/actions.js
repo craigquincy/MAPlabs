@@ -1,3 +1,7 @@
+/**
+ * @module src/store/answers/reducer
+ * @see {@link module:src/store/answers/consants|constants}
+ */
 import {
   ANSWERS_LOADING,
   ANSWERS_LOAD,
