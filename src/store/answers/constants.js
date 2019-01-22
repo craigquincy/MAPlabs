@@ -1,5 +1,5 @@
 /**
- * @module src/store/answers/constants
+ * @module answers/constants
  */
 
 /**
