@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Col, ButtonToolbar } from 'react-bootstrap'
+import { Link } from "react-browser-router"
 const SplashPage = () => {
     return (
         <div style={style.background}>

@@ -27,7 +27,7 @@ import { ListGroupItem, ButtonGroup, Button, } from 'react-bootstrap'
 
   return (
 
-    <ListGroupItem>{ first } { renderButton(data) } { second }</ListGroupItem>
+    <ListGroupItem>{ first } { renderButton( data ) } { second }</ListGroupItem>
 
 
   )

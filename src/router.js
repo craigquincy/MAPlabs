@@ -30,31 +30,31 @@ class RouterComponent extends React.Component {
 
       // <John />
       // <TestNarratives />
+//
+//       <TestShortAnswers />
+//     )
+//
+//
+//
+//   }
+// }
+<Router style={{ paddingTop: 10 }}>
 
-      <TestShortAnswers />
-    )
+  <Switch>
+    <Route path='/' component={SplashPage} initial />
+    <Route path='/login' component={Login} title='please login' />
+    <Route path='/signUp' component={SignUp} title='please signUp' />
 
+  </Switch>
 
-
-  }
-}
-// <Router style={{ paddingTop: 10 }}>
-
-//   <Switch>
-//     <Route path='/' component={ModulesPage} initial />
-//     <Route path='/login' component={Login} title='please login' />
-//     <Route path='/signUp' component={SignUp} title='please signUp' />
-
-//   </Switch>
-
-// </Router >
-// // <TestPopup />
+</Router >
+// <TestPopup />
 // <TestQuestions />
 // <TestShortAnswers />
 // <John />
 // <TestNarratives />
 
-
+//
 // class RouterComponent extends React.Component {
 //   render() {
 //     return(
@@ -66,10 +66,10 @@ class RouterComponent extends React.Component {
 //           <Route path='/signUp' component={SignUp} title='please signUp'/>
 //         </Switch>
 //       </Router>
-//       // <Route path='/' component={Narrative} question="What about..?" answer="What abt what?" />
-//     )
-//   }
-// }
+      // <Route path='/' compocnent={Narrative} question="What about..?" answer="What abt what?" />
+    )
+  }
+}
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   // header
