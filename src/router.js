@@ -11,7 +11,7 @@ export default class RouterComponent extends React.Component {
         <Router style={{ paddingTop: 10 }}>
           <Switch>
             <Route path={['/', '/#splash']} component={SplashPage} initial />
-            <Route path = { 'login' } component = { Login }/>
+            <Route path = { '/login' } component = { Login }/>
           </Switch>
         </Router>
       )
