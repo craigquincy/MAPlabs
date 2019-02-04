@@ -215,7 +215,6 @@ export const loginUserFail = ( dispatch ) => {
       uri: ''
     }
     return async ( dispatch ) => {
-        console.log( 'this disBATCH', dispatch )
           await firebase.auth().createUserWithEmailAndPassword( email, password )
             .then( user => (
             loginUserSuccess( dispatch, user )
