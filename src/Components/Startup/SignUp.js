@@ -29,20 +29,17 @@ this.onPasswordChange = this.onPasswordChange.bind( this )
 
   onEmailChange=( event )=> {
 
-    console.log( 'type of string', typeof event,event )
     this.props.emailChanged( event.target.value )
   }
 
   onPasswordChange=( event ) =>{
-    console.log( 'this is the error on password', event, typeof event )
     this.props.passwordChanged( event.target.value )
   }
 
   onButtonPress=() =>{
-    // const {first_name, last_name, email, password} = this.props
-    // console.log('firstName',this.props.first_name);
-    console.log( 'this.props.first_name', this.props )
-    this.props.signUpUser( this.props.first_name, this.props.last_name, this.props.email, this.props.password )
+
+
+    this.props.signUpUser( this.props.fname, this.props.lname, this.props.email, this.props.password )
   }
 
   renderError=()=> {
@@ -70,7 +67,7 @@ this.onPasswordChange = this.onPasswordChange.bind( this )
   render() {
     const { viewStyles, textInputStyles, emailTextStyles, passwordTextStyles,
             signUpTextStyles, signUpButtonStyle } = styles
-            console.log( 'here duuuuude',this.props )
+
     return (
       <div style={viewStyles}>
       <div
@@ -177,13 +174,20 @@ const styles = {
 
 function mapStateToProps( state ) {
   console.log( 'thisis the STATE>>',state.userRD.user )
-  return {
-    fname : state.userRD.user.fname,
-    lname : state.userRD.user.lname,
-    email : state.userRD.user.email,
-    password: state.userRD.user.password,
+    return ( state.userRD.user ?
+      {
+        fname : state.userRD.user.fname,
+        lname : state.userRD.user.lname,
+        email : state.userRD.user.email,
+        password: state.userRD.user.password,
 
-  }
+      }
+    :  {
+        fname:'',
+        lname:'',
+        email:'',
+        password:''
+      } )
 }
 
 export default connect( mapStateToProps, {

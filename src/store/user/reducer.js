@@ -156,35 +156,35 @@ export const userRD = ( state = initialState, action ) => {
       }
     }
     case FIRSTNAME_CHANGED:
-    let user = {
-      ...state.user,
-      fname: payload,
-    }
-  return{...state, user}
-  case LASTNAME_CHANGED:
-    let last = {
-      ...state.user,
-      lname: payload,
-    }
-  return{...state, user:last}
-case EMAIL_CHANGED:
-  let email = {
-    ...state.user,
-    lname: payload,
-}
-  return {...state, user:email }
-case PASSWORD_CHANGED:
-let password = {
-  ...state.user,
-  password:payload
-}
-  return {...state, user:password}
-case LOGIN_USER:
-  return {...state, loading: true, error: '' }
-case LOGIN_USER_SUCCESS:
-  return {...state, user: payload }
-case LOGIN_USER_FAIL:
-  return { ...state, error: 'Authentication Failed.', password: '', loading: false }
+      let user = {
+        ...state.user,
+        fname: payload,
+      }
+      return{...state, user}
+    case LASTNAME_CHANGED:
+      let last = {
+        ...state.user,
+        lname: payload,
+      }
+      return{...state, user:last}
+    case EMAIL_CHANGED:
+      let email = {
+        ...state.user,
+        email: payload,
+      }
+      return {...state, user:email }
+    case PASSWORD_CHANGED:
+      let password = {
+        ...state.user,
+        password:payload
+      }
+      return {...state, user:password}
+    case LOGIN_USER:
+      return {...state, loading: true, error: '' }
+    case LOGIN_USER_SUCCESS:
+      return {...state, user}
+    case LOGIN_USER_FAIL:
+      return { ...state, error: 'Authentication Failed.', password: '', loading: false }
     case USER_UPDATE_CURR_SECTION_NO_CHANGE:
       return state
 
@@ -206,7 +206,7 @@ case LOGIN_USER_FAIL:
     }
     case SIGNUP: {
       const { userRD } = payload
-      console.log( 'THIS IS THE USERRD FOOOOOO!!!',userRD )
+
       return  payload
     }
 

@@ -22,7 +22,7 @@ class NavBar extends React.Component {
   render() {
     console.log( "NavBar::render" )
     return (
-      this.props.user &&
+      !this.props.user ? <div></div> :
 
       <Navbar style={styles.body} fixedTop>
         <Navbar.Header>

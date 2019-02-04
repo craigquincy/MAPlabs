@@ -191,51 +191,46 @@ export const signUp = () => {
     dispatch.signUp()
   }
 }
-export const signUpUser = ( firstName, lastName, email, password ) => {
-  let body = {
-    fname: firstName,
-    lname: lastName,
-    email: email,
-    token: password,
-    uri: ''
-  }
-  return async ( dispatch ) => {
-      console.log( 'this disBATCH', dispatch )
-        await firebase.auth().createUserWithEmailAndPassword( email, password )
-          .then( user => loginUserSuccess( dispatch, user ) )
-           firebase.auth().onAuthStateChanged( ( user ) => {
-            if ( user ) {
-              console.log( 'in here duuuuuude' )
-              body.token = user.uid
 
-
-            }
-          } )
-          dispatch( {
-            type: SIGNUP,
-            payload:body
-          } )
-  }
-}
-//
-// export const loadLifeDescriptorsAC = () => {
-//   console.log('action!!!');
-//   dispatch({
-//     type: LOAD_LIFE_DESCRIPTORS
-//   })
-// }
-
-const loginUserFail = ( dispatch ) => {
+export const loginUserFail = ( dispatch ) => {
   dispatch( {
     type: LOGIN_USER_FAIL
   } )
 }
 
-const loginUserSuccess = ( dispatch, user ) => {
-  console.log( 'user is in the HOUSE',user )
-  dispatch( {
-    type: LOGIN_USER_SUCCESS,
-    payload: user
-  } )
-dispatch.main()
-}
+  export const loginUserSuccess = ( dispatch, user ) => {
+    console.log( 'user is in the HOUSE',user )
+    dispatch( {
+      type: LOGIN_USER_SUCCESS,
+      payload: user
+    } )
+  }
+
+  export const signUpUser = ( firstName, lastName, email, password ) => {
+    let body = {
+      fname: firstName,
+      lname: lastName,
+      email: email,
+      token: password,
+      uri: ''
+    }
+    return async ( dispatch ) => {
+        console.log( 'this disBATCH', dispatch )
+          await firebase.auth().createUserWithEmailAndPassword( email, password )
+            .then( user => (
+            loginUserSuccess( dispatch, user )
+          ) )
+             firebase.auth().onAuthStateChanged( ( user ) => {
+              if ( user ) {
+                console.log( 'in here duuuuuude',user )
+                body.token = user.uid
+
+
+              }
+            } )
+            dispatch( {
+              type: SIGNUP,
+              payload:body
+            } )
+      }
+  }
