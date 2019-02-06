@@ -236,7 +236,7 @@ export const signUpUser = ( firstName, lastName, email, password ) => {
            firebase.auth().onAuthStateChanged( async( user ) => {
             if ( user ) {
               payload.token = user.uid
-              const  jwt = await user.getIdToken()
+              const jwt = await user.getIdToken()
 
                payload.user = await fetch( `${process.env.REACT_APP_DB_URL}/users`, {
                 method:'POST',
