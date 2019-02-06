@@ -137,8 +137,8 @@ class Module4 extends React.Component {
       )
     }
 
+    // {/*!this.props.token ? <Redirect to="/infopage"/>:*/}
     return (
-      !this.props.token ? <Redirect to="/infopage"/>:
       <>
         <Module
           moduleNum = { 4 }
@@ -205,7 +205,7 @@ const mapStateToProps = state => {
   return {
     isLoading: isLoading( state ),
     userId: getUser( state.userRD ).user_id,
-      token: state.userRD.user.uid
+      token: state.userRD.userRD.user.login_token
   }
 }
 

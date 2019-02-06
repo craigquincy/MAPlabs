@@ -46,16 +46,32 @@ const initialState = {
   errorMessage: '',
   orderOfSections: [],
   user: {
-    user_id: 1,
+    user_id: 0,
     fname: "",
     lname: "",
     email: "",
     password: "",
-    login_service_id: 1,
+    login_service_id: 0,
     token: "",
-    curr_module: 4,
+    curr_module: -1,
     curr_section: 0,
    },
+// const initialState = {
+//   isLoading: false,  // change to true when we connect with login process
+//   isError: false,
+//   errorMessage: '',
+//   orderOfSections: [],
+//   user: {
+//     user_id: 1,
+//     fname: "",
+//     lname: "",
+//     email: "",
+//     password: "",
+//     login_service_id: 1,
+//     token: "",
+//     curr_module: 4,
+//     curr_section: 0,
+//    },
 }
 
 /* ***********************************************
@@ -72,13 +88,13 @@ export const getUser = ( state ) => state.user
    isFirstSection()
 
    Check if sectionNum is first section in moduleNum.
-     Note: only check when there is
+     Note: only check when the sections of the module have been loaded (ie you
+           can't check random modules, just the one you're in.)
 
    return -- t/f
 ************************************************** */
 export const isFirstSection = ( state, moduleNum, sectionNum ) => {
   console.log( 'userRD::isFirstSection()' )
-
   // We should only be getting inquiries for Modules that have been loaded and thus
   //   have a key/value pair in orderOfSections.  However some timing issue
   //   with loading leads to this being called before the first section loads SOMETIMES!
@@ -139,7 +155,7 @@ export const getNextModuleSection = ( userRD, currModuleNum, currSectionNum ) =>
 ************************************************** */
 export const userRD = ( state = initialState, action ) => {
 
-  const { type, payload } = action
+    const { type, payload } = action
 
   switch( type ) {
 
@@ -183,7 +199,7 @@ case LOGIN_USER:
   return {...state, loading: true, error: '' }
 case LOGIN_USER_SUCCESS:
 
-  return {...state, user: {...state.user, ...payload.user} }
+  return {...state, user: {...payload} }
 case LOGIN_USER_FAIL:
   return { ...state, error: 'Authentication Failed.', password: '', loading: false }
     case USER_UPDATE_CURR_SECTION_NO_CHANGE:
@@ -214,6 +230,7 @@ case LOGIN_USER_FAIL:
     default:
       return state
    }
+
  }
 
  export default userRD

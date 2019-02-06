@@ -22,7 +22,9 @@ const STRENGTHS_FN = 'strengths'
    section -- this is both the section of the reducer object and the JSON filename
 ******************************************************** */
 function loadstaticJSON( section ) {
-  return fetch( `${URL}/${section}.json` )
+  const url= `${URL}/${section}.json`
+  console.log( `loadstaticJSON: ${url}` );
+  return fetch( url )
     .then( response => response.json() )
     .then( ( jsonData ) => {
       // console.log(section, jsonData)
@@ -65,7 +67,7 @@ export const loadAllStaticdataAC = () => {
       .catch( ( error ) => {
         console.log( "PROMISE.ALL ERROR", error )
         return dispatch( { type: STATICDATA_ERROR_DB, payload: error } )
-      });
+      } )
   }
 }
 
