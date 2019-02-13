@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form,FormControl,FormGroup, Label } from 'react-bootstrap'
+import { Form,FormControl, FormGroup, Label } from 'react-bootstrap'
 // import Beliefs from './valuesAndBeliefs'
 
 export default class ContextualInfluences extends Component{
@@ -44,6 +44,7 @@ export default class ContextualInfluences extends Component{
             </select>
 
       </Form>
+
       </div>
     )
 

@@ -72,20 +72,25 @@ import { Button } from 'react-bootstrap'
   //   this.setState( { influencesWithKeys: newInfluencesWithKeys } )
   // }
   render(){
-    const { groups, beliefs } = this.props
+console.log( 'props in MODULE 2', this.props )
     return (
-      groups.map( group => (
-        <div>
+      <div>
+        groups.map( group => (
+          <div>
 
-          <Influences
-            key = {group.code}
-            beliefs = {beliefs}
-            question={group.text}
-            name= {group.name}
-          />
-          
-        </div>
-       ) )
+            <Influences
+              key = {group.code}
+              beliefs = {beliefs}
+              question={group.text}
+              name= {group.name}
+            />
+
+            </div>
+         ) )
+       <div className="text-center">
+         <Button className="closeButton" type="button" >Close</Button>
+       </div>
+       </div>
     )
   }
 }

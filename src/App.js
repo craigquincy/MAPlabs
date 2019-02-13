@@ -23,22 +23,22 @@ class App extends Component {
       storageBucket: "",
       messagingSenderId: "666788418297"
     }
-    if (!firebase.apps.length) {
-      firebase.initializeApp(config)
+    if ( !firebase.apps.length ) {
+      firebase.initializeApp( config )
     }
   }
 
   render() {
-
+console.log( 'thisis the props on APP', this.props )
     const middleware = [ReduxThunk]
-    if (process.env.NODE_ENV === 'development') {
-      middleware.push(createLogger()) // log actions and pre and post store state
+    if ( process.env.NODE_ENV === 'development' ) {
+      middleware.push( createLogger() ) // log actions and pre and post store state
     }
 
     const store = createStore(
       reducers,
       {}, // no intiial state
-      applyMiddleware(...middleware)
+      applyMiddleware( ...middleware )
     )
 
     return (

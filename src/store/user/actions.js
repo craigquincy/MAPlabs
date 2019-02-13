@@ -22,7 +22,7 @@ import { getNextModuleSection } from './reducer'
 const URL = process.env.REACT_APP_DB_URL
 
 /* ************************************************
-    persistCurrModuleAndSection
+    persistCurrModuleAndSectionz
 
     Helper to persist the user's new curr_module and curr_section
 
@@ -39,12 +39,16 @@ const persistCurrModuleAndSection = ( dispatch, user, moduleNum, sectionNum ) =>
   }
 
   console.log( "---- fetching body: ", JSON.stringify( body ) )
+
+  const jwt = JSON.parse( localStorage.getItem( 'jwt' ) )
+
   return fetch( `${URL}/users/${user.user_id}`, {
       method: 'PATCH',
       body: JSON.stringify( body ),
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
+        Authorization: `Token: ${jwt}`
       },
     } )
     .then( response => {
@@ -171,19 +175,34 @@ export const passwordChanged = ( text ) => {
 
 export const loginUser = ( { email, password}  ) => {
 
-
-
   return async ( dispatch ) => {
 
     await firebase.auth().signInWithEmailAndPassword( email, password )
-      .then ( async ( user ) => {
-      const jwt = await  user.gerIdToken()
-        document.cookie = `jwt:${jwt}`
-        await fetch( `${process.env.REACT_APP_DB_URL}/users/:id`, {
+// <<<<<<< HEAD
+//       .then ( async ( user ) => {
+//       const jwt = await  user.gerIdToken()
+//         document.cookie = `jwt:${jwt}`
+//         await fetch( `${process.env.REACT_APP_DB_URL}/users/:id`, {
+//           method:"GET",
+//         } ).then( async( res ) => {
+//           const info = await res.json()
+//           loginUserSuccess( dispatch, info )
+// =======
+    //user is nested in an object
+    //alias as fireBaseUser to avoid overloaded term user
+    .then ( async ( { user: fireBaseUser } ) => {
+      const jwt = await fireBaseUser.getIdToken()
+      localStorage.setItem( 'jwt', JSON.stringify( jwt ) )
+      await fetch( `${process.env.REACT_APP_DB_URL}/users/`, {
           method:"GET",
+          headers: {
+            Authorization: `Token: ${jwt}`
+          }
         } ).then( async( res ) => {
-          const info = await res.json()
-          loginUserSuccess( dispatch, info )
+          const userFromDatabase = await res.json()
+          console.log( 'user from MAPmaker database', userFromDatabase )
+          loginUserSuccess( dispatch, userFromDatabase )
+
 
         } )
       } )
@@ -225,34 +244,43 @@ export const signUpUser = ( firstName, lastName, email, password ) => {
   return async ( dispatch ) => {
 
       console.log( 'this disBATCH', document.cookie )
+      //firebase sends back a user but we do not use it here.
+      //user and jwt are taken from result of onAuthStateChanged
         await firebase.auth().createUserWithEmailAndPassword( email, password )
-          .then( user => {
 
-            loginUserSuccess( dispatch, user )
+          .then( () => {} )
 
-         }
-       )
+           await firebase.auth().onAuthStateChanged( async( fireBaseUser ) => {
+            if ( fireBaseUser ) {
+              const jwt = await fireBaseUser.getIdToken()
 
-           firebase.auth().onAuthStateChanged( async( user ) => {
-            if ( user ) {
-              payload.token = user.uid
-              const jwt = await user.getIdToken()
+              localStorage.setItem( 'jwt', JSON.stringify( jwt ) )
+
+              const body = JSON.stringify( {
+                fname:payload.fname,
+                lname:payload.lname
+              } )
 
                payload.user = await fetch( `${process.env.REACT_APP_DB_URL}/users`, {
                 method:'POST',
-                headers:{"Content-Type":"application/json"},
-                body: JSON.stringify( {
-                  fname:payload.fname,
-                  lname:payload.lname,
-                  jwt:jwt
-                } )
+                headers:{"Content-Type":"application/json",
+                Authorization: `Token: ${jwt}`
+              },
+                body: body
+
               } )
               .then(
                 res => res.json()
               )
 
 
-              document.cookie = `jwt:${jwt}`
+              loginUserSuccess( dispatch, payload.user )
+
+              dispatch( {
+                type: SIGNUP,
+                payload
+              } )
+
             }
           } )
           dispatch( {

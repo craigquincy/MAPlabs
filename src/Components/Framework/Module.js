@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Section from './Section'
 import ShowMoreLess from '../Utils/ShowMoreLess'
 import {
@@ -9,7 +9,7 @@ import {
   Form,
   FormControl,
   FormGroup,
-} from 'react-bootstrap';
+} from 'react-bootstrap'
 
 /* **************************************************
    Module
@@ -25,7 +25,7 @@ import {
 export default class Module extends React.Component {
 
   render() {
-    console.log("Module::render()")
+    console.log( "Module::render()" )
 
     let { moduleNum, moduleTitle, moduleDescription, children } = this.props
 
