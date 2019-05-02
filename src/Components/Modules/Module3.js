@@ -169,12 +169,12 @@ export default class Module3 extends React.Component {
         moduleTitle = "Personal Desires"
         moduleDescription = { MOD_3_DESC }
       >
-        <SectionCT
+        {/* <SectionCT
           moduleNum = { 3 }
           sectionNum = { 900 }
           sectionTitle = "Developing StrengthCT"
           exercise = {this.exercise_900}
-        />
+        /> */}
         <SectionCT
           moduleNum = { 3 }
           sectionNum = { 310 }
