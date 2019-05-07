@@ -1,56 +1,91 @@
 
-export const MOD_4_DESC = `Meaning and purpose, at bottom, arise from kinds of self-knowledge.  They embody the living, active knowledge of what matters most to us.  They make sense of the world around us and how we fit into it.  And they direct us toward the unique contribution we hope to make to ourselves, others, and the world around us.
+export const MOD_4_DESC = `Module 4 of MAPmaker is a turning point. <br>
+<br>
+In Module 1 you assessed your current situation and dared to envision a more positive future for yourself.  In Module 2 you inventoried all of your influences and engaged in thoughtful self-reflection to differentiate your personal values and beliefs from those of others around you. In Module 3 you delved deeply into your most authentic self to acknowledge and embrace your greatest personal desires.
+You must be exhausted! 
 <br><br>
-This has a practical implication for those of us who want a deeper sense of meaning and purpose: deep reflection must become part of our everyday lives.
+(But hopefully you are also enlivened with self-awareness, honesty, curiosity, and an enlarged sense of your personal possibility).
+In this module we will transition from deep, inwardly focused introspection, to begin focusing on how our authentic self can more optimally engage in the outward world around us.
+`
+
+//1
+export const QUES_410_DESC = `Take the VIA Survey of Character Strengths. The survey is available for free on the
+University of Pennsylvania’s Positive Psychology Center website. This link will take you there
+directly, or you can go to www.authentichappiness.sas.upenn.edu , hover over the
+“Questionnaires” menu item, and click on the VIA Survey of Character Strengths (make sure
+to take the standard, adult version, not the “children” version). The explanations of strengths
+on this website are brief, but if you would like more in-depth information, you can take the
+same survey for free on the VIA Institute of Character website, but then pay $40 for their
+VIA Pro Report which gives a more robust explanation of both your individual strengths, as
+well as how they interplay with each other. See an example of the VIA Pro Report here .
+Before taking the survey, you’ll need to create an account and login.
+Some details about the Survey:
 <br><br>
-What do we mean by “deep reflection”?  It is a practice of stepping back from the immediate claims on our attention, looking inward, observing our patterns of thought and feeling, asking why we think and feel as we do, and developing insight from that line of questioning about who we are most authentically.
+It has 240 short statements about personal qualities you may have. Your task will be
+to indicate on a 5-point scale how well each statement describes you. There is no time
+limit, so you can reflect on each question as long as you like. However, the questions
+are designed to be answered rapidly, and typically people need about 30 minutes to
+finish.
 <br><br>
-That’s hard.
+As with any survey of this kind, there are no right or wrong answers.
+When you complete the survey, the site will compile your answers and return a
+ranked list of your character strengths.
+Please note: Initially, the University of Pennsylvania site will only show your top 5
+“signature strengths,” but at the very bottom of the page, under “Strength #5,” click
+on the words “Show More” to reveal the ranking of all 24 of your strengths. There is
+a lot to learn from which strengths are not your top strengths!
+Study your strengths. Now that you have discovered your strengths, familiarize yourself
+with them. The strengths survey results will provide a basic definition of each strength.
+Since these strengths are considered to be foundational to who you are, what you value, and
+ultimately how you can build a more meaningful and purposeful life, it is important that you
+take some time to fully understand your signature strengths.
+We highly recommend that you read the more comprehensive definitions about your
+strengths for free on the VIA Institute of Character’s site here ,
+( http://www.viacharacter.org/www/Character-Strengths ) where you can click on each
+pictured strength to reveal a whole page on each.
 <br><br>
-The ancient philosopher Socrates described self-knowledge as an elusive, but critical component of how one should live.  In modern times, scientists echo this sentiment in listing “thoughtful self-reflection” as a foundational element of developing life meaning and purpose.  As you will see, every module within MAPmaker offers exercises designed to provoke thoughtful self-reflection, and your willingness and efforts to engage in thoughtful self-reflections will in large measure determine  how successful you are in creating life transformation.
+Record your top 5 strengths and reflect on each.
+Enter your top 5 strengths in the order they are reported in the VIA Survey.
+Now, reflect broadly and generally on each of the strengths you listed in the field provided.
+The goal for the remainder of today is to simply get you thinking about what these strengths
+are and whether you have seen them surface in your life. To help you reflect on them, here
+are some prompts:
 <br><br>
-Most of us are afraid of what we will find when we truly know ourselves.  Or perhaps we are afraid of not finding much at all.  At any rate, our everyday lives are usually so full of distractions and claims on our attention and emotional energy that deep reflection is exceedingly rare.  MAPmaker gives you both a context and a methodology to evolve beyond this avoidance, and to embrace who you are at your deepest, most authentic self.
+How and when have you felt the presence of each of your top 5 strengths in your life, and
+what were the results?
 <br><br>
-You will be doing a lot of reflection throughout MAPmaker (one of its long-term benefits for you, in fact, may be a habit of reflection that continues long after you are finished).  The purpose of this introductory module is to ease you into the program by offering exercises that help you to 1) reflect on your current life situation, and 2) think about how you would like your situation to change in the future.
+How and when have you felt their absence, and what were the results?
+<br><br>
+Does each strength resonate with you? Why or why not?
+<br><br>
+Does each strength explain anything about you that is clarifying for now or for the future?
+<br><br>
+What do you personally feel about each strength? Can you explain why each of these top 5
+strengths rose to the top for you?`
+
+
+//2
+export const QUES_420_DESC = `Overview: Acting on your signature strengths. Now we want to make this exploration of strengths more concrete. Rather than focusing on strengths generally, consider how or when each strength manifests itself in your everyday life, past and present. Note how and when in your current life or in your past you used your top strengths with satisfaction or good results? It is also possible, for example, that your top strengths find little opportunity for expression in your current life or career, whereas your normal duties require strengths that are far down your list. If this is the case, then note how and when you do use your top strengths, even if they are just a small part of your everyday life.
+This will be an exercise in two parts. For each strength, list its “embodiments” and “impediments” in your life. 
+<br><br>
+An embodiment is a task, a practice, or an experience in your life that calls upon your strength. You may have previously just thought of such embodiments in isolation as things you are good at, that are easy for you, or that cause you to experience flow when you are doing them. But by seeing these experiences as embodiments of a character strength, you can begin to understand how these strengths have served as personal equities or special talents that are expressive of who you are authentically, your natural self. By listing as many examples as you can of how your signature strengths are embodied in your life, you can view your strengths more holistically, and see how and when they have impact in your life (as well as where and when they are missing). 
+<br><br>
+An impediment is something about your circumstances, yourself, or others that prevents you from acting on your strength. Your circumstances, yourself, or others could be downright hostile to your strength, but an impediment need not be so extreme. It could just be that the conditions of success in your circumstances, or the attitudes of yourself and others, steer you away from acting on your core strengths. As with the embodiments, try to list as many examples as you can of when and how your signature strengths are impeded in your life so that you can view your life more holistically, and see how and when your strengths have been impeded from enabling you to live a more fully authentic and natural life.
+<br><br>
+There is no timeframe that should limit your selection of embodiments and impediments. Something that comes to mind from ten or twenty years ago is just as eligible as something from ten minutes ago. Odds are, patterns you might notice in the distant past still manifest themselves, however subtly, in your life today.
+<br><br>
+One final note, sometimes your strengths demonstrate both embodiment and impediment in the same circumstance. We may actually find ourselves in circumstances that both embody and impede our strengths. In this case, please capture it in both categories. Here’s an example to help you get started:
+In the sample VIA Pro Report that you can see here, one of Jo’s strengths is creativity. Jo found both embodiments and impediments to this strength in a consulting career. Embodiments were the challenges of coming up with fresh ideas to solve a client’s problem, the senses of flow experienced when developing the creative ideas, and the rewards gained from cleverly succeeding in “the chess game” of business. Impediments were that this creativity was sharply constrained to only commercial applications, which caused personal conflicts, and even a sense of personal deadening, in not using this creative strength in ways that better supported the non-commercial values, beliefs and desires that were most important.,  A sense of “golden handcuffs” was felt at not being able to step away from the commercial success that the creativity brought, in order to use the creativity in something that would be more personally valued and that would lead to a more fulfilling life.
 `
 
 
-export const QUES_410_DESC = `A list of phrases is provided that are generalized statements about the feelings or experiences you may have in your current life.  From the list of phrases provided, choose the ones that seem to best describe the feelings or experiences you have in your <i>current situation<i> (we will get to your future desired situation later), especially the ones that are most relevant, provocative, or resonant to you.`
+export const QUES_430_DESC = ``
 
 
-export const QUES_420_DESC = `Using the phrases you chose, as well as the descriptions you created next to each one of them, write a full description of your current state of mind, state of being, and general assessment of your current condition today as you begin MAPmaker.  Create this description in your own image, capturing how you feel, what you think of your situation, what is good and bad, and how you would describe your current self to your future self.  The goal of this exercise is not only to ground yourself in deep self-reflection and honesty, but also to give you a benchmark of your current condition that you can reference in the future.  So be as honest, thorough, and as descriptive as you can be.`
+export const QUES_440_DESC = ``
 
+export const QUES_450_DESC = ``
 
-export const QUES_430_DESC = `Now let’s make this very concrete. Consider what needs to be 'broken from' in your current situation, what needs to be 'built toward' to create your desired future life, and fill in the following blanks.
-<br><br>
-In order to transform my current situation into my desired future life, I need to change my:`
-
-
-export const QUES_440_DESC = `Review and compare the statement from Exercise 2E to the statement from Exercise 3E.  Look for ways in which the two statements reflect each other, and for ways in which they reflect differing things from each other, and record in your workbook.
-<br><br>
-As you compare the two statements, list the most important overarching themes that impact how meaningful and purposeful your life is.
-<br><br>
-Which core feelings and experiences are most important to providing you with personal senses of the <i>meaning</i> in your life?
-<br><br>
-Name some <i>things beyond yourself</i> that you could serve if you lived with more of your core feelings and experiences.
-<br><br>
-List the areas of <i>personal growth</i> that will enable your life to be more filled with the core feelings and experiences you desire.
-<br><br>
-List which <i>relationships</i> that you either currently have or need to develop in the future (to any influence, such as people, groups, practices, experiences, etc.) are most important to supporting your life being lived with more of your core feelings and experiences.
-<br><br>
-List any areas of <i>engagement</i> or <i>mastery</i> (either in your life’s work or avocationally) that would provide you with more of your core feelings and experiences.`
-
-export const QUES_450_DESC = `Listing your desires is an important first step, one that can be hard. But there is more to do here. The next step is to go through a process of filtering that will allow you to decide which desires are most important to you within each category.
-<br><br>
-Within each category, compare the desires you listed, and make a tradeoff between each set of two, choosing only one of the two desires to carry into the next round.  For example, if you listed ten desires in one category, then compare your first listed desire to your second listed desire, and choose only one of them.  Then do the same for desires three and four, etc… At the end of round 1 you will have culled your desires in this category from ten to five.  Then do the same in the next round, and so on, until you only have one primary desire within the category.  Do this exercise for all seven categories until you only have one primary desire for each category.
-<br><br>
-This exercise has two main aims.
-<br><br>
-First, and most basically, it allows you to identify and focus on your deepest, most compelling desires, while letting other secondary desires fall to the sidelines. That will be valuable for developing your sense of purpose, since purpose is inherently based on what is most meaningful to you. Seeing what you choose as your most compelling desires, as well as seeing what you don’t choose, can help you to know what you are most striving for among a field of possible options.
-<br><br>
-Second, and more deeply, this exercise will give you an opportunity to be visceral rather than logical or reasonable, to sit in your body and feel your way through what is most important to you. Purpose is not something you reason your way into. The logic you use may very well stem from the unacknowledged expectations of others. Purpose takes root when you find yourself committed to something almost despite the better reasons one could find for taking another path. If the path makes sense to you, it has to make sense on the level of the heart, not just the head. As the philosopher Blaise Pascal wrote, 'The heart has reasons which the reason knows not.'
-<br><br>
-<i>A caveat:<i> when you get down to your last few desires, you may find that they are equally important, and you may want to combine some of them to come up with an optimal final desire. There will be an opportunity for you to make this kind of revision in the last two rounds.`
-
-
-export const QUES_460_DESC = `When you are finished, you will be able to see all of your final desires for each category in one place. Think about them for a few minutes. Taken together, what do they suggest about the life that you desire? Also think about how you prioritized each category in your second tradeoff exercise. In the space provided, write a short statement that brings together all the desires from each category and captures the essence of what this exercise has revealed to you, using the phrases themselves. As you organize the statement, pay attention to how you prioritized among these desires.`
+export const QUES_460_DESC = `Congratulations of completing Module 4!  Now it is time for you to give us feedback on your experience.  Please go to the survey on Google Forms and let us know how things went.  Our goal is to make MAPmaker the most effective process of self-discovery and purpose enacting available, so please share with us your honest thoughts, opinions, and ideas.  
+Once we’ve received your feedback we will forward to you Module 5.
+`

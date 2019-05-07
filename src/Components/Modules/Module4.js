@@ -41,90 +41,9 @@ import {
 export default class Module4 extends React.Component {
 
 
-
-  // Define questions and excercises for Module 4
-  // --------------------------------------------------------------------
-/*
-  // -------------------------
-  // LifeDescriptions
-
-  exercise_410 = (
-    <LifeDescriptorsCT
-      question = { { code: 410, text: "Reflect on your current situation" } }
-      description = { QUES_410_DESC }
-      instructions = "Complete sentences that are important to you:"
-    /> )
-
-
-  // -------------------------
-  // Narrative
-  exercise_420 = (
-    <NarrativeCT
-      question = { { code: 420, text: "Describe your current situation" } }
-      promptQuestionCode = { 410 }
-      description = { QUES_420_DESC }
-      instructions = "Using the phrases you chose, write a full description of your current state of mind, state of being, and general assessment of your current condition today as you begin MAPmaker."
-    /> )
-
-  // -------------------------
-  // Transitions
-
-  transitions_430 = [
-    <TransitionsCT question = { { code: 431, text: "Thoughts/Attitudes" } } />,
-    <TransitionsCT question = { { code: 432, text: "Behaviors/Actions" } } />,
-  ]
-  exercise_430 = (
-    <QuestionsCT
-      persistAC_CB = {persistTransitionsFromQuestionAC}
-      description = { QUES_430_DESC }
-      subComponents = {this.transitions_430}
-    /> )
-
-
-  // -------------------------
-  // ShortAnswers
-
-  shortAnswers_440 = [
-    <ShortAnswersCT question = { { code: 441, text: "Which core feelings and experiences are most important to providing you with personal senses of the meaning in your life?" } } />,
-    <ShortAnswersCT question = { { code: 442, text: "List the most important overarching themes that impact how meaningful and purposeful your life is." } } />,
-  ]
-  exercise_440 = (
-    <QuestionsCT
-      persistAC_CB = {persistAnswersFromQuestionAC}
-      description = { QUES_440_DESC }
-      subComponents = {this.shortAnswers_440}
-    /> )
-
-  // -------------------------
-  // Bracket
-
-  brackets_450 = [
-    <BracketCT promptQuestionCodes = { [ 441 ] }  question = { { code: 451, text: "Financial/Material" } } />,
-    <BracketCT promptQuestionCodes = { [ 442 ] }  question = { { code: 452, text: "Vocation/Career/Life Work" } } />,
-  ]
-  exercise_450 = (
-    <QuestionsCT
-      persistAC_CB = {persistAnswersFromQuestionAC}
-      description = {QUES_450_DESC}
-      subComponents = {this.brackets_450}
-    /> )
-
-  // ---------------------------
-  // Narrative
-
-  exercise_460 = (
-    <NarrativeCT
-      question = { { code: 460, text: "Synthesize into a Desires Statement." } }
-      promptQuestionCode = { 451 }
-      description = { QUES_460_DESC }
-      instructions = "Write a short statement that brings together all the desires from each category and captures the essence of what this exercise has revealed to you using the phrases themselves. Note:  If there were desires that reached the final tradeoff round in Exercise 3 that are also really important, feel free to incorporate them as well. "
-    /> )
-*/
-  /* *********************************************************** */
-
   strengths_410 = [
-    <StrengthXCT question = { { code: 411, text: "question 411" } } />,
-    <StrengthXCT question = { { code: 412, text: "question 412" } } />,
+    <StrengthXCT question = { { code: 410, text: `Enter your top 5 strengths from the cell's drop down menu in the order they are reported in the VIA Survey` } } />,
+    <StrengthXCT question = { { code: 411, text: `Reflect broadly and generally on each of the strengths you listed. Refer to the questions in the PDF for prompts.` } } />,
   ]
 
   exercise_410 = (
@@ -134,55 +53,125 @@ export default class Module4 extends React.Component {
       subComponents = {this.strengths_410}
     />)
 
+    strengths_420 = [
+      <StrengthXCT question = { { code: 420, text: `List your “embodiments” and “impediments.”` } } />,
+      <StrengthXCT question = { { code: 421, text: `Describe each embodiment and impediment in fuller detail.` } } />,
+      <StrengthXCT question = { { code: 422, text: `Choose your embodiments and impediments.` } } />,
+
+    ]
+  
+    exercise_420 = (
+      <QuestionsCT
+        questionType = { QUESTION_TYPE_STRENGTH }
+        description = { QUES_420_DESC }
+        subComponents = { this.strengths_420 }
+      />)
+  
+
+      strengths_430 = [
+        <StrengthXCT question = { { code: 430, text: `Explain your ranking.` } } />,
+        <StrengthXCT question = { { code: 431, text: `Synthesize your findings into themes.` } } />,
+      ]
+    
+      exercise_430 = (
+        <QuestionsCT
+          questionType = { QUESTION_TYPE_STRENGTH }
+          description = { QUES_430_DESC }
+          subComponents = {this.strengths_430}
+      />)
+
+
+      strengths_440 = [
+        <StrengthXCT question = { { code: 440, text: `Compare your “embodiment” themes to your “impediment” themes.  Review and compare the “embodiment” and “impediment” themes from Exercise 3B.  Look for ways in which the two statements reflect each other, and for ways in which they reflect differing things from each other.` } } />,
+        <StrengthXCT question = { { code: 441, text: `Breaking and building.  In order to create more personal Environmental mastery, consider which impediments are working against you mastering your strengths and need to be “broken from,” and which types of embodiments are most expressive of your strengths and need to be “built toward.” Fill in the following blanks:` } } />,
+        // <StrengthXCT question = { { code: 412, text: "question 412" } } />,
+      ]
+    
+      exercise_440 = (
+        <QuestionsCT
+          questionType = { QUESTION_TYPE_STRENGTH }
+          description = { QUES_440_DESC }
+          subComponents = {this.strengths_440}
+      />)
+
+
+      strengths_450 = [
+        <StrengthXCT question = { { code: 450, text: "Compare your “embodiment” themes to your “impediment” themes.  Review and compare the “embodiment” and “impediment” themes from Exercise 3B.  Look for ways in which the two statements reflect each other, and for ways in which they reflect differing things from each other." } } />,
+        // <StrengthXCT question = { { code: 412, text: "question 412" } } />,
+      ]
+    
+      exercise_450 = (
+        <QuestionsCT
+          questionType = { QUESTION_TYPE_STRENGTH }
+          description = { QUES_450_DESC }
+          subComponents = {this.strengths_450}
+      />)
+
+
+      strengths_460 = [
+        <StrengthXCT question = { { code: 460, text: "FIX THIS STRENGTHS 460" } } />,
+        // <StrengthXCT question = { { code: 412, text: "question 412" } } />,
+      ]
+    
+      exercise_460 = (
+        <QuestionsCT
+          questionType = { QUESTION_TYPE_BRACKET }
+          description = { QUES_460_DESC }
+          subComponents = {this.strengths_460}
+      />)
+    
+  
+  
+
   render() {
     return (
       <ModuleCT
         moduleNum = { 4 }
-        moduleTitle = "Your Meanings and Motivations "
+        moduleTitle = "Your Meanings and Motivations"
         moduleDescription = { MOD_4_DESC }
       >
       <SectionCT
           moduleNum = { 4 }
           sectionNum = { 410 }
-          sectionTitle = "Record your top 5 strengths and reflect on each"
+          sectionTitle = "Identify your strenghts //exercise 1"
           exercise = {this.exercise_410}
         />
-        {/*<SectionCT
-          moduleNum = { 4 }
-          sectionNum = { 410 }
-          sectionTitle = "Reflect on your current situation"
-          exercise = {this.exercise_410}
-        />
-        <SectionCT
+
+      <SectionCT
           moduleNum = { 4 }
           sectionNum = { 420 }
-          sectionTitle = "Describe your current situation"
+          sectionTitle= "Signature Strengths //exercise 2"
           exercise = {this.exercise_420}
-        />
-        <SectionCT
-          moduleNum = { 4 }
-          sectionNum = { 430 }
-          sectionTitle = "Breaking and building"
-          exercise = {this.exercise_430}
-        />
-        <SectionCT
-          moduleNum = { 4 }
-          sectionNum = { 440 }
-          sectionTitle = "Compare your 'current situation' statement to your 'future desired situation' statement"
-          exercise = {this.exercise_440}
-        />
-        <SectionCT
-          moduleNum = { 4 }
-          sectionNum = { 450 }
-          sectionTitle = "Make tradeoffs within each category"
-          exercise = {this.exercise_450}
-        />
-        <SectionCT
-          moduleNum = { 4 }
-          sectionNum = { 460 }
-          sectionTitle = "Synthesize into a Desires Statement"
-          exercise = {this.exercise_460}
-        />*/}
+        /> 
+      
+      <SectionCT
+        moduleNum = { 4 }
+        sectionNum = { 430 }
+        sectionTitle = ' insert title //exercise 3'
+        exercise = {this.exercise_430}
+      /> 
+
+      <SectionCT
+        moduleNum = { 4 }
+        sectionNum = { 440 }
+        sectionTitle = 'insert title //exercise 3a'
+        exercise = {this.exercise_440}
+      /> 
+
+      <SectionCT
+        moduleNum = { 4 }
+        sectionNum = { 450 }
+        sectionTitle = 'insert title //exercise 4'
+        exercise = {this.exercise_450}
+      /> 
+
+      {/* Not sure how else to format the conclusion: */}
+      <div>
+        { QUES_460_DESC } 
+      </div>
+
+
+
       </ModuleCT>
     )
   }
