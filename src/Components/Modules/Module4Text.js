@@ -46,8 +46,12 @@ pictured strength to reveal a whole page on each.
 <br><br>
 `
 
-//2
-export const QUES_420_DESC = `Overview: Acting on your signature strengths. Now we want to make this exploration of strengths more concrete. Rather than focusing on strengths generally, consider how or when each strength manifests itself in your everyday life, past and present. Note how and when in your current life or in your past you used your top strengths with satisfaction or good results? It is also possible, for example, that your top strengths find little opportunity for expression in your current life or career, whereas your normal duties require strengths that are far down your list. If this is the case, then note how and when you do use your top strengths, even if they are just a small part of your everyday life.
+export const QUES_420_DESC = `Now, reflect broadly and generally on each of the strengths you listed in the field provided. The goal for the remainder of today is to simply get you thinking about what these strengths
+are and whether you have seen them surface in your life. To help you reflect on them, here
+are some prompts:`
+
+
+export const QUES_430_DESC = `Now we want to make this exploration of strengths more concrete. Rather than focusing on strengths generally, consider how or when each strength manifests itself in your everyday life, past and present. Note how and when in your current life or in your past you used your top strengths with satisfaction or good results? It is also possible, for example, that your top strengths find little opportunity for expression in your current life or career, whereas your normal duties require strengths that are far down your list. If this is the case, then note how and when you do use your top strengths, even if they are just a small part of your everyday life.
 This will be an exercise in two parts. For each strength, list its “embodiments” and “impediments” in your life. 
 <br><br>
 An embodiment is a task, a practice, or an experience in your life that calls upon your strength. You may have previously just thought of such embodiments in isolation as things you are good at, that are easy for you, or that cause you to experience flow when you are doing them. But by seeing these experiences as embodiments of a character strength, you can begin to understand how these strengths have served as personal equities or special talents that are expressive of who you are authentically, your natural self. By listing as many examples as you can of how your signature strengths are embodied in your life, you can view your strengths more holistically, and see how and when they have impact in your life (as well as where and when they are missing). 
@@ -61,16 +65,7 @@ In the sample VIA Pro Report that you can see here, one of Jo’s strengths is c
 `
 
 
-export const QUES_430_DESC = `Review and compare the “embodiment” and “impediment” themes from Exercise 3B.  Look for ways in which the two statements reflect each other, and for ways in which they reflect differing things from each other.
-<br><br>
-As you compare the two sets of themes, list the most important overarching themes that impact how your life is most well lived from your strengths. 
-Which embodiments provide you with the most personal senses of the meaning in your life?
-What people or things beyond yourself would you like to serve if you more intentionally lived through your Signature Strengths?
-What areas of personal growth are needed for you to be able to live more from your Signature Strengths?
-Which relationships that you either currently have or need to develop in the future (to any people, groups, practices, experiences, etc.) are most needed to support your living from your Signature Strengths?
-What areas of engagement could your Signature Strengths lead you to master (either in your life’s work or avocationally) in order to create a more meaningful and purposeful life?
 
-`
 
 
 export const QUES_440_DESC = `Breaking and building.  In order to create more personal Environmental mastery, consider which impediments are working against you mastering your strengths and need to be “broken from,” and which types of embodiments are most expressive of your strengths and need to be “built toward.” Fill in the following blanks:

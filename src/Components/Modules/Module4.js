@@ -42,15 +42,7 @@ export default class Module4 extends React.Component {
 
 
   strengths_410 = [
-    <ShortAnswersCT question = { { code: 410, text: `Record your top 5 strengths and reflect on each.` } } />,
-    <ShortAnswersCT question = { { code: 411, text: `Now, reflect broadly and generally on each of the strengths you listed in the field provided. The goal for the remainder of today is to simply get you thinking about what these strengths
-are and whether you have seen them surface in your life. To help you reflect on them, here
-are some prompts:
-How and when have you felt the presence of each of your top 5 strengths in your life, and what were the results?
-How and when have you felt their absence, and what were the results?
-Does each strength resonate with you? Why or why not?
-Does each strength explain anything about you that is clarifying for now or for the future?
-What do you personally feel about each strength? Can you explain why each of these top 5 strengths rose to the top for you?`} } />,
+    <ShortAnswersCT question = { { code: 410, text: `Record your top 5 strengths and reflect on each.` } } />
 ]
 
   exercise_410 = (
@@ -79,11 +71,13 @@ What do you personally feel about each strength? Can you explain why each of the
   
 
 
-
-
+      
       strengths_430 = [
-        <ShortAnswersCT question = { { code: 430, text: `Explain your ranking.` } } />,
-        <ShortAnswersCT question = { { code: 431, text: `Synthesize your findings into themes.` } } />,
+        <ShortAnswersCT question = { { code: 430, text: `How and when have you felt the presence of each of your top 5 strengths in your life, and what were the results?` } } />,
+        <ShortAnswersCT question = { { code: 431, text: `How and when have you felt their absence, and what were the results?` } } />,
+        <ShortAnswersCT question = { { code: 432, text: `Does each strength resonate with you? Why or why not?` } } />,
+        <ShortAnswersCT question = { { code: 433, text: `Does each strength explain anything about you that is clarifying for now or for the future?` } } />,
+        <ShortAnswersCT question = { { code: 434, text: `What do you personally feel about each strength? Can you explain why each of these top 5 strengths rose to the top for you?` } } />,
       ]
     
       exercise_430 = (
@@ -112,36 +106,6 @@ What do you personally feel about each strength? Can you explain why each of the
 
 
 
-
-      // strengths_450 = [
-      //   <StrengthXCT question = { { code: 450, text: "Compare your “embodiment” themes to your “impediment” themes.  Review and compare the “embodiment” and “impediment” themes from Exercise 3B.  Look for ways in which the two statements reflect each other, and for ways in which they reflect differing things from each other." } } />,
-      //   // <StrengthXCT question = { { code: 412, text: "question 412" } } />,
-      // ]
-    
-      // exercise_450 = (
-      //   <QuestionsCT
-      //     questionType = { QUESTION_TYPE_STRENGTH }
-      //     description = { QUES_450_DESC }
-      //     subComponents = {this.strengths_450}
-      // />)
-
-
-
-
-      
-      // strengths_460 = [
-      //   <StrengthXCT question = { { code: 460, text: "FIX THIS STRENGTHS 460" } } />,
-      //   // <StrengthXCT question = { { code: 412, text: "question 412" } } />,
-      // ]
-    
-      // exercise_460 = (
-      //   <QuestionsCT
-      //     questionType = { QUESTION_TYPE_BRACKET }
-      //     description = { QUES_460_DESC }
-      //     subComponents = {this.strengths_460}
-      // />)
-    
-  
   
 
   render() {
@@ -160,18 +124,19 @@ What do you personally feel about each strength? Can you explain why each of the
         />
 
       <SectionCT
+        moduleNum = { 4 }
+        sectionNum = { 420 }
+        sectionTitle = 'Reflect on your strengths'
+        exercise = {this.exercise_430}
+      /> 
+
+      <SectionCT
           moduleNum = { 4 }
-          sectionNum = { 420 }
+          sectionNum = { 430 }
           sectionTitle= "Acting on your signature strengths"
           exercise = {this.exercise_420}
         /> 
       
-      <SectionCT
-        moduleNum = { 4 }
-        sectionNum = { 430 }
-        sectionTitle = 'Dig into your themes'
-        exercise = {this.exercise_430}
-      /> 
 
       <SectionCT
         moduleNum = { 4 }
