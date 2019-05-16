@@ -119,14 +119,14 @@ export default class Module4 extends React.Component {
       <SectionCT
           moduleNum = { 4 }
           sectionNum = { 410 }
-          sectionTitle = "Identify your strenghts"
+          sectionTitle = "Identify your signature strenghts"
           exercise = {this.exercise_410}
         />
 
       <SectionCT
         moduleNum = { 4 }
         sectionNum = { 420 }
-        sectionTitle = 'Reflect on your strengths'
+        sectionTitle = 'Reflect on your signature strengths'
         exercise = {this.exercise_430}
       /> 
 
