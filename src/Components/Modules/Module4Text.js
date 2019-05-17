@@ -65,13 +65,9 @@ In the sample VIA Pro Report that you can see here, one of Jo’s strengths is c
 `
 
 
-
-
-
 export const QUES_440_DESC = `Breaking and building.  In order to create more personal Environmental mastery, consider which impediments are working against you mastering your strengths and need to be “broken from,” and which types of embodiments are most expressive of your strengths and need to be “built toward.” Fill in the following blanks:
 <br><br>
 In order to create a more meaningful and purposeful life, I want to increase my Environmental mastery by altering how I engage with my: `
-
 
 
 export const COMPLETION_DESC = `Congratulations of completing Module 4!  Now it is time for you to give us feedback on your experience.  Please go to the survey on Google Forms and let us know how things went.  Our goal is to make MAPmaker the most effective process of self-discovery and purpose enacting available, so please share with us your honest thoughts, opinions, and ideas.  
