@@ -28,6 +28,7 @@ import {
   QUES_420_DESC,
   QUES_430_DESC,
   QUES_440_DESC,
+  QUES_450_DESC,
   COMPLETION_DESC
 } from './Module4Text'
 
@@ -42,7 +43,7 @@ export default class Module4 extends React.Component {
 
 
   strengths_410 = [
-    <ShortAnswersCT question = { { code: 410, text: `Record your top 5 strengths and reflect on each.` } } />
+    <ShortAnswersCT question = { { code: 410, text: `Record your top 5 strengths in the order they are reported in the VIA Survey.` } } />
 ]
 
   exercise_410 = (
@@ -56,10 +57,13 @@ export default class Module4 extends React.Component {
 
 
     strengths_420 = [
-      <ShortAnswersCT question = { { code: 420, text: `List your “embodiments” and “impediments.”` } } />,
-      <ShortAnswersCT question = { { code: 421, text: `Describe each embodiment and impediment in fuller detail.` } } />,
-      <ShortAnswersCT question = { { code: 422, text: `Choose your embodiments and impediments.` } } />,
-
+      // <ShortAnswersCT question = { { code: 420, text: `List your “embodiments” and “impediments.”` } } />,
+      // <ShortAnswersCT question = { { code: 421, text: `Describe each embodiment and impediment in fuller detail.` } } />,
+      // <ShortAnswersCT question = { { code: 422, text: `Choose your embodiments and impediments.` } } />,
+      <ShortAnswersCT question = { { code: 420, text: `Your Signature Strengths, as listed in the previous exercise` } } />, //for this one i want to pull in those strengths as listed previously 
+      <ShortAnswersCT question = { { code: 421, text: `Categorize each as an "embdiment" or "impediment"` } } />,
+      <ShortAnswersCT question = { { code: 422, text: `Write a simple word or phrase for each embodiment or impediment. List as many as you'd like for each (add more rows if necessary).` } } />,
+      <ShortAnswersCT question = { { code: 423, text: `Write about why each is an embodiment or impediment. Go into as much detail as you would like.` } } />
     ]
   
     exercise_420 = (
@@ -90,24 +94,39 @@ export default class Module4 extends React.Component {
 
 
 
-
       strengths_440 = [
-        <ShortAnswersCT question = { { code: 440, text: `*NEED STRUCTURE FOR THIS* Compare your “embodiment” themes to your “impediment” themes.` } } />,
-        <ShortAnswersCT question = { { code: 441, text: `*NEED STRUCTURE FOR THIS* Establish which should be broken and which should be built.` } } />,
+        <ShortAnswersCT question = { { code: 440, text: 'List the most important overarching themes that impact how your life is most well lived from your strengths.' } } />,
+        <ShortAnswersCT question = { { code: 441, text: 'Which embodiments provide you with the most personal senses of the meaning in your life?' } } />,
+        <ShortAnswersCT question = { { code: 442, text: 'What people or things beyond yourself would you like to serve if you more intentionally lived through your Signature Strengths?' } } />,
+        <ShortAnswersCT question = { { code: 443, text: 'What areas of personal growth are needed for you to be able to live more from your Signature Strengths?' } } />,
+        <ShortAnswersCT question = { { code: 444, text: 'Which relationships that you either currently have or need to develop in the future (to any people, groups, practices, experiences, etc.) are most needed to support your living from your Signature Strengths?' } } />,
+        <ShortAnswersCT question = { { code: 445, text: 'What areas of engagement could your Signature Strengths lead you to master (either in your life’s work or avocationally) in order to create a more meaningful and purposeful life?' } } />
       ]
     
       exercise_440 = (
         <QuestionsCT
-          questionType = { QUESTION_TYPE_STRENGTH }
+          questionType = { QUESTION_TYPE_SHORT_ANSWERS }
           description = { QUES_440_DESC }
           subComponents = {this.strengths_440}
+      />)
+
+
+      strengths_450 = [
+        <TransitionsCT question = { { code: 450, text: "Which impediments are working against you? How can you break them?" } } />,
+        <TransitionsCT question = { { code: 451, text: "Which embodiments are working for you? How can you build them?" } } />,
+      ]
+    
+      exercise_450 = (
+        <QuestionsCT
+          questionType = { QUESTION_TYPE_TRANSITIONS }
+          description = { QUES_450_DESC }
+          subComponents = {this.strengths_450}
       />)
 
 
 
 
   
-
   render() {
     return (
       <div>
@@ -133,7 +152,7 @@ export default class Module4 extends React.Component {
       <SectionCT
           moduleNum = { 4 }
           sectionNum = { 430 }
-          sectionTitle= "Acting on your signature strengths"
+          sectionTitle= 'List your “embodiments” and “impediments.”'
           exercise = {this.exercise_420}
         /> 
       
@@ -145,7 +164,14 @@ export default class Module4 extends React.Component {
         exercise = {this.exercise_440}
       /> 
 
+      <SectionCT
+        moduleNum = { 4 }
+        sectionNum = { 450 }
+        sectionTitle = 'Break and Build'
+        exercise = {this.exercise_450}
+      /> 
 
+      
       </ModuleCT>
       <ModuleCT
         moduleNum = { '4 is complete!' }
