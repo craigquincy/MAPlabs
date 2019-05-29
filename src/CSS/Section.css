@@ -18,7 +18,7 @@
   border-color: black;
 }
 .background {
-  box-shadow: 10px 10px 70px 10px  rgb(213, 215, 213);
+  /* box-shadow: 10px 10px 70px 10px  rgb(213, 215, 213); */
   
 }
 .contain{
@@ -32,8 +32,8 @@
   margin-bottom: 2%;
   margin-right: 3%;
   margin-left: 3%;
-  border-radius:20px;
-  box-shadow:3px 3px 1px 3px rgb(46, 102, 178);
+  /* border-radius:20px; */
+  /* box-shadow:3px 3px 1px 3px rgb(46, 102, 178); */
 }
 .divider{
   border-color:rgb(213, 215, 213);

@@ -81,7 +81,7 @@ const style = {
     marginLeft: "10%",
     marginBottom: "4%",
     borderRadius: "15px",
-    boxShadow: "5px 5px 50px 10px grey",
+    // boxShadow: "5px 5px 50px 10px grey",
   },
   spacing: {
     marginTop: "5%",

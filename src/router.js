@@ -4,6 +4,7 @@ import Module1 from './Components/Modules/Module1'
 import Module2 from './Components/Modules/Module2'
 import Module3 from './Components/Modules/Module3'
 import Module4 from './Components/Modules/Module4'
+import Module5 from './Components/Modules/Module5'
 import SplashPage from './Components/Startup/SplashPage'
 import HomePage from './Components/Startup/HomePage'
 import InfoPage from './Components/Startup/InfoPage'
@@ -16,16 +17,17 @@ export default class RouterComponent extends React.Component {
   render() {
     return (
       <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route exact path='/infopage' component={InfoPage} />
-        <Route exact path='/splash' component={SplashPage} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/modules/1' component={Module1} />
-        <Route exact path='/modules/2' component={Module2} />
-        <Route exact path='/modules/3' component={Module3} />
-        <Route exact path='/modules/4' component={Module4} />
-        <Route exact path='/signup' component={SignUp} />
-        <Route exact path='/dashboard' component={Dashboard} />
+        <Route exact path='/' component={ HomePage } />
+        <Route exact path='/infopage' component={ InfoPage } />
+        <Route exact path='/splash' component={ SplashPage } />
+        <Route exact path='/login' component={ Login } />
+        <Route exact path='/modules/1' component={ Module1 } />
+        <Route exact path='/modules/2' component={ Module2 } />
+        <Route exact path='/modules/3' component={ Module3 } />
+        <Route exact path='/modules/4' component={ Module4 } />
+        <Route exact path='/modules/5' component={ Module5 } />
+        <Route exact path='/signup' component={ SignUp } />
+        <Route exact path='/dashboard' component={ Dashboard } />
       </Switch>
     )
   }
